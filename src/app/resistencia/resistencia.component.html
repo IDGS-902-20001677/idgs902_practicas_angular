@@ -1,61 +1,134 @@
-<mat-label>Color 1</mat-label>
-<mat-form-field>
-  <select matNativeControl required [(ngModel)]="color1">
-    <option value="Negro">Negro</option>
-    <option value="Café">Café</option>
-    <option value="Rojo">Rojo</option>
-    <option value="Naranja">Naranja</option>
-    <option value="Amarillo">Amarillo</option>
-    <option value="Verde">Verde</option>
-    <option value="Azul">Azul</option>
-    <option value="Morado">Morado</option>
-    <option value="Gris">Gris</option>
-    <option value="Blanco">Blanco</option>
-  </select>
-</mat-form-field>
+<div class="container text-center">
+  <h1 class="mt-5 mb-4">Calculadora de resistencias</h1>
 
-<mat-label>Color 2</mat-label>
-<mat-form-field>
-  <select matNativeControl required [(ngModel)]="color2">
-    <option value="Negro">Negro</option>
-    <option value="Café">Café</option>
-    <option value="Rojo">Rojo</option>
-    <option value="Naranja">Naranja</option>
-    <option value="Amarillo">Amarillo</option>
-    <option value="Verde">Verde</option>
-    <option value="Azul">Azul</option>
-    <option value="Morado">Morado</option>
-    <option value="Gris">Gris</option>
-    <option value="Blanco">Blanco</option>
-  </select>
-</mat-form-field>
+  <mat-label class="mt-4">Color 1</mat-label>
+  <mat-form-field>
+    <select matNativeControl required [(ngModel)]="color1" (change)="calcular()">
+      <option value="Negro">Negro</option>
+      <option value="Café">Café</option>
+      <option value="Rojo">Rojo</option>
+      <option value="Naranja">Naranja</option>
+      <option value="Amarillo">Amarillo</option>
+      <option value="Verde">Verde</option>
+      <option value="Azul">Azul</option>
+      <option value="Morado">Morado</option>
+      <option value="Gris">Gris</option>
+      <option value="Blanco">Blanco</option>
+    </select>
+  </mat-form-field>
 
-<mat-label>Color 3</mat-label>
-<mat-form-field>
-  <select matNativeControl required [(ngModel)]="color3">
-    <option value="Negro">Negro</option>
-    <option value="Café">Café</option>
-    <option value="Rojo">Rojo</option>
-    <option value="Naranja">Naranja</option>
-    <option value="Amarillo">Amarillo</option>
-    <option value="Verde">Verde</option>
-    <option value="Azul">Azul</option>
-    <option value="Morado">Morado</option>
-    <option value="Gris">Gris</option>
-    <option value="Blanco">Blanco</option>
-  </select>
-</mat-form-field>
+  <mat-label>Color 2</mat-label>
+  <mat-form-field>
+    <select matNativeControl required [(ngModel)]="color2" (change)="calcular()">
+      <option value="Negro">Negro</option>
+      <option value="Café">Café</option>
+      <option value="Rojo">Rojo</option>
+      <option value="Naranja">Naranja</option>
+      <option value="Amarillo">Amarillo</option>
+      <option value="Verde">Verde</option>
+      <option value="Azul">Azul</option>
+      <option value="Morado">Morado</option>
+      <option value="Gris">Gris</option>
+      <option value="Blanco">Blanco</option>
+    </select>
+  </mat-form-field>
 
-<br>
+  <mat-label>Color 3</mat-label>
+  <mat-form-field>
+    <select matNativeControl required [(ngModel)]="color3" (change)="calcular()">
+      <option value="Negro">Negro</option>
+      <option value="Café">Café</option>
+      <option value="Rojo">Rojo</option>
+      <option value="Naranja">Naranja</option>
+      <option value="Amarillo">Amarillo</option>
+      <option value="Verde">Verde</option>
+      <option value="Azul">Azul</option>
+      <option value="Morado">Morado</option>
+      <option value="Gris">Gris</option>
+      <option value="Blanco">Blanco</option>
+    </select>
+  </mat-form-field>
 
-<mat-radio-group aria-label="Select an option" [(ngModel)]="rb">
-  <mat-radio-button value="1">Dorado</mat-radio-button>
-  <mat-radio-button value="2">Plata</mat-radio-button>
-</mat-radio-group>
+  <br>
 
-<div class="mb-3">
-    <button class="btn btn-primary" (click)="calcular()" mat-raised-button>Calcular</button>
-</div>
-<div class="col-4">
-    <h3>El resultado es: {{resultado}}</h3>
+  <mat-radio-group aria-label="Select an option" [(ngModel)]="rb" (ngModelChange)="calcular()">
+    <mat-radio-button value="5%">Dorado</mat-radio-button>
+    <mat-radio-button value="10%">Plata</mat-radio-button>
+  </mat-radio-group>
+
+  <div class="mb-3 mt-4">
+    <button class="btn btn-primary" mat-raised-button>Calcular</button>
+  </div>
+
+  <div class="col-6">
+    <table class="table table-bordered table-striped mt-5">
+      <thead>
+        <tr>
+          <th>Color 1</th>
+          <th>Color 2</th>
+          <th>Color 3</th>
+          <th>Tolerancia</th>
+          <th>Resultado</th>
+          <th>Resultado Máximo</th>
+          <th>Resultado Mínimo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <mat-form-field [style.background-color]="styleColor1">
+              <select matNativeControl required [(ngModel)]="color1" (ngModelChange)="calcular()">
+                <option value="Negro">Negro</option>
+                <option value="Café">Café</option>
+                <option value="Rojo">Rojo</option>
+                <option value="Naranja">Naranja</option>
+                <option value="Amarillo">Amarillo</option>
+                <option value="Verde">Verde</option>
+                <option value="Azul">Azul</option>
+                <option value="Morado">Morado</option>
+                <option value="Gris">Gris</option>
+                <option value="Blanco">Blanco</option>
+              </select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field [style.background-color]="styleColor2">
+              <select matNativeControl required [(ngModel)]="color2" (ngModelChange)="calcular()">
+                <option value="Negro">Negro</option>
+                <option value="Café">Café</option>
+                <option value="Rojo">Rojo</option>
+                <option value="Naranja">Naranja</option>
+                <option value="Amarillo">Amarillo</option>
+                <option value="Verde">Verde</option>
+                <option value="Azul">Azul</option>
+                <option value="Morado">Morado</option>
+                <option value="Gris">Gris</option>
+                <option value="Blanco">Blanco</option>
+              </select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field [style.background-color]="styleColor3">
+              <select matNativeControl required [(ngModel)]="color3" (ngModelChange)="calcular()">
+                <option value="Negro">Negro</option>
+                <option value="Café">Café</option>
+                <option value="Rojo">Rojo</option>
+                <option value="Naranja">Naranja</option>
+                <option value="Amarillo">Amarillo</option>
+                <option value="Verde">Verde</option>
+                <option value="Azul">Azul</option>
+                <option value="Morado">Morado</option>
+                <option value="Gris">Gris</option>
+                <option value="Blanco">Blanco</option>
+              </select>
+            </mat-form-field>
+          </td>
+          <td>{{ rb }}</td>
+          <td>{{ resultado }}</td>
+          <td>{{ resultadomax }}</td>
+          <td>{{ resultadomin }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
