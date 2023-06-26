@@ -7,12 +7,14 @@ import { ResistenciaComponent } from './resistencia/resistencia.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalculoResistenciaModule } from './resistencia/calculo-resistencia/calculo-resistencia.module';
 import { DistanciaComponent } from './Tarea/distancia/distancia.component';
+import { CineComponent } from './cine/cine.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ResistenciaComponent,
-    DistanciaComponent
+    DistanciaComponent,
+    CineComponent
   ],
   imports: [
     BrowserModule,

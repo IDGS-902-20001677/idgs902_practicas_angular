@@ -1,0 +1,54 @@
+<div class="container" style="background-color: rgb(102, 102, 241);">
+    <h1 style="color: white; text-align: center;">Cinepolis</h1>
+  
+    <div style="text-align: center;">
+      <div>
+        <h2 style="color: white;">Entradas</h2>
+      </div>
+      <div>
+        <form class="form-horizontal" name="formEntradas" (ngSubmit)="submitForm()">
+          <mat-form-field>
+            <label for="txtNombre">Nombre:</label>
+            <input matInput type="text" name="txtNombre" [(ngModel)]="persona">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <label for="cantComp">Cantidad compradores:</label>
+            <input matInput type="number" name="cantComp" [(ngModel)]="cantComp" value="1">
+          </mat-form-field>
+  <br>
+          <mat-label for="rbt" style="color: white;">Tarjeta Cineco</mat-label>
+          <mat-radio-group [(ngModel)]="rbt" name="rbt">
+            <mat-radio-button value="radioS">SI</mat-radio-button>
+            <mat-radio-button value="radioN">NO</mat-radio-button>
+          </mat-radio-group>
+  <br>
+          <mat-form-field>
+            <label for="cantBol">Cantidad de boletos:</label>
+            <input matInput type="number" name="cantBol" [(ngModel)]="cantBol">
+          </mat-form-field>
+          <br><br>
+          <h2 style="color: white;">Acciones</h2>
+          <div class="mat-form-field" style="display: flex; justify-content: center;">
+            <button mat-raised-button>
+              Procesar
+            </button>
+            <!-- <button mat-raised-button>
+              Salir
+            </button> -->
+          </div>
+        </form>
+      </div>
+      <div class="m-3" style="text-align: center;">
+        <div>
+          <h2 style="color: white;">Salidas</h2>
+        </div>
+        <div id="result" style="color: white;">
+          <h3>El monto total es de: {{ res }}</h3>
+          <h3>Cliente: {{ persona }}</h3>
+          <h3>Descuento: {{ desc }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  
