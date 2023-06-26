@@ -6,10 +6,13 @@ import { AppComponent } from './app.component';
 import { ResistenciaComponent } from './resistencia/resistencia.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalculoResistenciaModule } from './resistencia/calculo-resistencia/calculo-resistencia.module';
+import { DistanciaComponent } from './Tarea/distancia/distancia.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    ResistenciaComponent
+    ResistenciaComponent,
+    DistanciaComponent
   ],
   imports: [
     BrowserModule,

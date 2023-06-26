@@ -1,0 +1,27 @@
+
+<div class="row">
+    <div class="col-6">
+        <mat-form-field>
+            <label for="" class="form-label">X1</label>
+            <input matInput type="number" [(ngModel)]="X1" placeholder="X1">
+        </mat-form-field>
+        <mat-form-field>
+            <label for="" class="form-label">Y1</label>
+            <input matInput type="number" [(ngModel)]="Y1" placeholder="Y1">
+        </mat-form-field>
+        <mat-form-field>
+            <label for="" class="form-label">X2</label>
+            <input matInput type="number" [(ngModel)]="X2" placeholder="X2">
+        </mat-form-field>
+        <mat-form-field>
+            <label for="" class="form-label">Y2</label>
+            <input matInput type="number" [(ngModel)]="Y2" placeholder="Y2">
+        </mat-form-field>
+        <div class="mb-3">
+            <button class="btn btn-primary" (click)="sumar()" mat-raised-button>Calcular</button>
+        </div>
+    </div>
+    <div class="col-4">
+        <h3>El resultado es: {{resultado}}</h3>
+    </div>
+</div>
