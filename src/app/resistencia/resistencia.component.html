@@ -1,134 +1,158 @@
 <div class="container text-center">
   <h1 class="mt-5 mb-4">Calculadora de resistencias</h1>
+  <div class="form-group mt-4">
+    <label>Color 1</label>
 
-  <mat-label class="mt-4">Color 1</mat-label>
-  <mat-form-field>
-    <select matNativeControl required [(ngModel)]="color1" (change)="calcular()">
-      <option value="Negro">Negro</option>
-      <option value="Café">Café</option>
-      <option value="Rojo">Rojo</option>
-      <option value="Naranja">Naranja</option>
-      <option value="Amarillo">Amarillo</option>
-      <option value="Verde">Verde</option>
-      <option value="Azul">Azul</option>
-      <option value="Morado">Morado</option>
-      <option value="Gris">Gris</option>
-      <option value="Blanco">Blanco</option>
+
+    <select class="form-control" id="color1" required [(ngModel)]="color1" (change)="calcular()"
+      [style.background-color]="styleColor1">
+      <option value="Negro" [ngStyle]="{ 'background-color': obtenerColorFondo('Negro') }">Negro</option>
+      <option value="Café" [ngStyle]="{ 'background-color': obtenerColorFondo('Café') }">Café</option>
+      <option value="Rojo" [ngStyle]="{ 'background-color': obtenerColorFondo('Rojo') }">Rojo</option>
+      <option value="Naranja" [ngStyle]="{ 'background-color': obtenerColorFondo('Naranja') }">Naranja</option>
+      <option value="Amarillo" [ngStyle]="{ 'background-color': obtenerColorFondo('Amarillo') }">Amarillo</option>
+      <option value="Verde" [ngStyle]="{ 'background-color': obtenerColorFondo('Verde') }">Verde</option>
+      <option value="Azul" [ngStyle]="{ 'background-color': obtenerColorFondo('Azul') }">Azul</option>
+      <option value="Morado" [ngStyle]="{ 'background-color': obtenerColorFondo('Morado') }">Morado</option>
+      <option value="Gris" [ngStyle]="{ 'background-color': obtenerColorFondo('Gris') }">Gris</option>
+      <option value="Blanco" [ngStyle]="{ 'background-color': obtenerColorFondo('Blanco') }">Blanco</option>
     </select>
-  </mat-form-field>
 
-  <mat-label>Color 2</mat-label>
-  <mat-form-field>
-    <select matNativeControl required [(ngModel)]="color2" (change)="calcular()">
-      <option value="Negro">Negro</option>
-      <option value="Café">Café</option>
-      <option value="Rojo">Rojo</option>
-      <option value="Naranja">Naranja</option>
-      <option value="Amarillo">Amarillo</option>
-      <option value="Verde">Verde</option>
-      <option value="Azul">Azul</option>
-      <option value="Morado">Morado</option>
-      <option value="Gris">Gris</option>
-      <option value="Blanco">Blanco</option>
+    <label>Color 2</label>
+  
+    <select class="form-control" id="color2" required [(ngModel)]="color2" (change)="calcular()"
+    [style.background-color]="styleColor2">
+      <option value="Negro" [ngStyle]="{ 'background-color': obtenerColorFondo('Negro') }">Negro</option>
+    <option value="Café" [ngStyle]="{ 'background-color': obtenerColorFondo('Café') }">Café</option>
+    <option value="Rojo" [ngStyle]="{ 'background-color': obtenerColorFondo('Rojo') }">Rojo</option>
+    <option value="Naranja" [ngStyle]="{ 'background-color': obtenerColorFondo('Naranja') }">Naranja</option>
+    <option value="Amarillo" [ngStyle]="{ 'background-color': obtenerColorFondo('Amarillo') }">Amarillo</option>
+    <option value="Verde" [ngStyle]="{ 'background-color': obtenerColorFondo('Verde') }">Verde</option>
+    <option value="Azul" [ngStyle]="{ 'background-color': obtenerColorFondo('Azul') }">Azul</option>
+    <option value="Morado" [ngStyle]="{ 'background-color': obtenerColorFondo('Morado') }">Morado</option>
+    <option value="Gris" [ngStyle]="{ 'background-color': obtenerColorFondo('Gris') }">Gris</option>
+    <option value="Blanco" [ngStyle]="{ 'background-color': obtenerColorFondo('Blanco') }">Blanco</option>
     </select>
-  </mat-form-field>
 
-  <mat-label>Color 3</mat-label>
-  <mat-form-field>
-    <select matNativeControl required [(ngModel)]="color3" (change)="calcular()">
-      <option value="Negro">Negro</option>
-      <option value="Café">Café</option>
-      <option value="Rojo">Rojo</option>
-      <option value="Naranja">Naranja</option>
-      <option value="Amarillo">Amarillo</option>
-      <option value="Verde">Verde</option>
-      <option value="Azul">Azul</option>
-      <option value="Morado">Morado</option>
-      <option value="Gris">Gris</option>
-      <option value="Blanco">Blanco</option>
+
+    <label>Color 3</label>
+  
+    <select class="form-control" id="color3" required [(ngModel)]="color3" (change)="calcular()"
+    [style.background-color]="styleColor3">
+      <option value="Negro" [ngStyle]="{ 'background-color': obtenerColorFondo('Negro') }">Negro</option>
+    <option value="Café" [ngStyle]="{ 'background-color': obtenerColorFondo('Café') }">Café</option>
+    <option value="Rojo" [ngStyle]="{ 'background-color': obtenerColorFondo('Rojo') }">Rojo</option>
+    <option value="Naranja" [ngStyle]="{ 'background-color': obtenerColorFondo('Naranja') }">Naranja</option>
+    <option value="Amarillo" [ngStyle]="{ 'background-color': obtenerColorFondo('Amarillo') }">Amarillo</option>
+    <option value="Verde" [ngStyle]="{ 'background-color': obtenerColorFondo('Verde') }">Verde</option>
+    <option value="Azul" [ngStyle]="{ 'background-color': obtenerColorFondo('Azul') }">Azul</option>
+    <option value="Morado" [ngStyle]="{ 'background-color': obtenerColorFondo('Morado') }">Morado</option>
+    <option value="Gris" [ngStyle]="{ 'background-color': obtenerColorFondo('Gris') }">Gris</option>
+    <option value="Blanco" [ngStyle]="{ 'background-color': obtenerColorFondo('Blanco') }">Blanco</option>
     </select>
-  </mat-form-field>
 
-  <br>
+    <br>
 
-  <mat-radio-group aria-label="Select an option" [(ngModel)]="rb" (ngModelChange)="calcular()">
-    <mat-radio-button value="5%">Dorado</mat-radio-button>
-    <mat-radio-button value="10%">Plata</mat-radio-button>
-  </mat-radio-group>
-
-  <div class="mb-3 mt-4">
-    <button class="btn btn-primary" mat-raised-button>Calcular</button>
+    
   </div>
 
-  <div class="col-6">
-    <table class="table table-bordered table-striped mt-5">
-      <thead>
-        <tr>
-          <th>Color 1</th>
-          <th>Color 2</th>
-          <th>Color 3</th>
-          <th>Tolerancia</th>
-          <th>Resultado</th>
-          <th>Resultado Máximo</th>
-          <th>Resultado Mínimo</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <mat-form-field [style.background-color]="styleColor1">
-              <select matNativeControl required [(ngModel)]="color1" (ngModelChange)="calcular()">
-                <option value="Negro">Negro</option>
-                <option value="Café">Café</option>
-                <option value="Rojo">Rojo</option>
-                <option value="Naranja">Naranja</option>
-                <option value="Amarillo">Amarillo</option>
-                <option value="Verde">Verde</option>
-                <option value="Azul">Azul</option>
-                <option value="Morado">Morado</option>
-                <option value="Gris">Gris</option>
-                <option value="Blanco">Blanco</option>
-              </select>
-            </mat-form-field>
-          </td>
-          <td>
-            <mat-form-field [style.background-color]="styleColor2">
-              <select matNativeControl required [(ngModel)]="color2" (ngModelChange)="calcular()">
-                <option value="Negro">Negro</option>
-                <option value="Café">Café</option>
-                <option value="Rojo">Rojo</option>
-                <option value="Naranja">Naranja</option>
-                <option value="Amarillo">Amarillo</option>
-                <option value="Verde">Verde</option>
-                <option value="Azul">Azul</option>
-                <option value="Morado">Morado</option>
-                <option value="Gris">Gris</option>
-                <option value="Blanco">Blanco</option>
-              </select>
-            </mat-form-field>
-          </td>
-          <td>
-            <mat-form-field [style.background-color]="styleColor3">
-              <select matNativeControl required [(ngModel)]="color3" (ngModelChange)="calcular()">
-                <option value="Negro">Negro</option>
-                <option value="Café">Café</option>
-                <option value="Rojo">Rojo</option>
-                <option value="Naranja">Naranja</option>
-                <option value="Amarillo">Amarillo</option>
-                <option value="Verde">Verde</option>
-                <option value="Azul">Azul</option>
-                <option value="Morado">Morado</option>
-                <option value="Gris">Gris</option>
-                <option value="Blanco">Blanco</option>
-              </select>
-            </mat-form-field>
-          </td>
-          <td>{{ rb }}</td>
-          <td>{{ resultado }}</td>
-          <td>{{ resultadomax }}</td>
-          <td>{{ resultadomin }}</td>
-        </tr>
-      </tbody>
-    </table>
+  
+  
+
+  
+
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="selectOption">Selecciona una opción</label>
+          <select class="form-control" id="selectOption" [(ngModel)]="rb" (ngModelChange)="calcular()">
+            <option value="5%">Dorado</option>
+            <option value="10%">Plata</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-6">
+        <table class="table table-bordered table-striped mt-5">
+          <thead>
+            <tr>
+              <th>Color 1</th>
+              <th>Color 2</th>
+              <th>Color 3</th>
+              <th>Tolerancia</th>
+              <th>Resultado</th>
+              <th>Resultado Máximo</th>
+              <th>Resultado Mínimo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="form-group">
+                  <label for="color1">Color 1</label>
+                  <select class="form-control" id="color1" [(ngModel)]="color1" (ngModelChange)="calcular()"
+                  [style.background-color]="styleColor1">
+                    <option value="Negro" [ngStyle]="{ 'background-color': obtenerColorFondo('Negro') }">Negro</option>
+                    <option value="Café" [ngStyle]="{ 'background-color': obtenerColorFondo('Café') }">Café</option>
+                    <option value="Rojo" [ngStyle]="{ 'background-color': obtenerColorFondo('Rojo') }">Rojo</option>
+                    <option value="Naranja" [ngStyle]="{ 'background-color': obtenerColorFondo('Naranja') }">Naranja</option>
+                    <option value="Amarillo" [ngStyle]="{ 'background-color': obtenerColorFondo('Amarillo') }">Amarillo</option>
+                    <option value="Verde" [ngStyle]="{ 'background-color': obtenerColorFondo('Verde') }">Verde</option>
+                    <option value="Azul" [ngStyle]="{ 'background-color': obtenerColorFondo('Azul') }">Azul</option>
+                    <option value="Morado" [ngStyle]="{ 'background-color': obtenerColorFondo('Morado') }">Morado</option>
+                    <option value="Gris" [ngStyle]="{ 'background-color': obtenerColorFondo('Gris') }">Gris</option>
+                    <option value="Blanco" [ngStyle]="{ 'background-color': obtenerColorFondo('Blanco') }">Blanco</option>
+                  </select>
+                </div>
+              </td>
+              <td>
+                <div class="form-group">
+                  <label for="color2">Color 2</label>
+                  <select class="form-control" id="color2" [(ngModel)]="color2" (ngModelChange)="calcular()"
+                  [style.background-color]="styleColor2">
+                    <option value="Negro" [ngStyle]="{ 'background-color': obtenerColorFondo('Negro') }">Negro</option>
+                    <option value="Café" [ngStyle]="{ 'background-color': obtenerColorFondo('Café') }">Café</option>
+                    <option value="Rojo" [ngStyle]="{ 'background-color': obtenerColorFondo('Rojo') }">Rojo</option>
+                    <option value="Naranja" [ngStyle]="{ 'background-color': obtenerColorFondo('Naranja') }">Naranja</option>
+                    <option value="Amarillo" [ngStyle]="{ 'background-color': obtenerColorFondo('Amarillo') }">Amarillo</option>
+                    <option value="Verde" [ngStyle]="{ 'background-color': obtenerColorFondo('Verde') }">Verde</option>
+                    <option value="Azul" [ngStyle]="{ 'background-color': obtenerColorFondo('Azul') }">Azul</option>
+                    <option value="Morado" [ngStyle]="{ 'background-color': obtenerColorFondo('Morado') }">Morado</option>
+                    <option value="Gris" [ngStyle]="{ 'background-color': obtenerColorFondo('Gris') }">Gris</option>
+                    <option value="Blanco" [ngStyle]="{ 'background-color': obtenerColorFondo('Blanco') }">Blanco</option>
+                  </select>
+                </div>
+              </td>
+              <td>
+                <div class="form-group">
+                  <label for="color3">Color 3</label>
+                  <select class="form-control" id="color3" [(ngModel)]="color3" (ngModelChange)="calcular()"
+                  [style.background-color]="styleColor3">
+                    <option value="Negro" [ngStyle]="{ 'background-color': obtenerColorFondo('Negro') }">Negro</option>
+                    <option value="Café" [ngStyle]="{ 'background-color': obtenerColorFondo('Café') }">Café</option>
+                    <option value="Rojo" [ngStyle]="{ 'background-color': obtenerColorFondo('Rojo') }">Rojo</option>
+                    <option value="Naranja" [ngStyle]="{ 'background-color': obtenerColorFondo('Naranja') }">Naranja</option>
+                    <option value="Amarillo" [ngStyle]="{ 'background-color': obtenerColorFondo('Amarillo') }">Amarillo</option>
+                    <option value="Verde" [ngStyle]="{ 'background-color': obtenerColorFondo('Verde') }">Verde</option>
+                    <option value="Azul" [ngStyle]="{ 'background-color': obtenerColorFondo('Azul') }">Azul</option>
+                    <option value="Morado" [ngStyle]="{ 'background-color': obtenerColorFondo('Morado') }">Morado</option>
+                    <option value="Gris" [ngStyle]="{ 'background-color': obtenerColorFondo('Gris') }">Gris</option>
+                    <option value="Blanco" [ngStyle]="{ 'background-color': obtenerColorFondo('Blanco') }">Blanco</option>
+                  </select>
+                </div>
+              </td>
+              <td>{{ rb }}</td>
+              <td>{{ resultado }}</td>
+              <td>{{ resultadomax }}</td>
+              <td>{{ resultadomin }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
+  
 </div>
